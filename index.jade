@@ -8,5 +8,11 @@ script(type='text/javascript', src='app/app.js')
 
 body(ng-app='app')
     .container
-        div(ng-controller='mainCtrl')
-            div {{ test }}
+        .row
+            h1 NXOCORP PROJECTS
+            div(ng-controller='mainCtrl')
+               .list-group
+                    a.list-group-item(href='#')(ng-repeat="project in projects")
+                        h4.list-group-item-heading {{ project.title }}
+                        p.list-group-item-text {{ project.description }}
+                        p.list-group-item-text {{ project.tags }}
