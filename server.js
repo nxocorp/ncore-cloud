@@ -22,7 +22,8 @@ app.get('*', function(req, res) { res.render('index'); });
 
 
 // connect to local mongoDB database
-mongoose.connect('mongodb://localhost/ncore-local-data');
+// mongoose.connect('mongodb://localhost/ncore-local');
+mongoose.connect('mongodb://cloud:cloud9test@ds061199.mongolab.com:61199/ncore-cloud');
 var con = mongoose.connection;
 con.once('open', function() { 
     console.log('connected to mongodb successfully!') 
